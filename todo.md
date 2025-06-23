@@ -1,0 +1,5 @@
+- command-line args
+- summation
+- multiple dice groups
+- static modifiers
+- dynamic modifiers (keep top/bottom x)
