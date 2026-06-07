@@ -1,3 +1,3 @@
 - command-line args
-- global summation
 - dynamic modifiers (keep top/bottom x)
+- finish README.md

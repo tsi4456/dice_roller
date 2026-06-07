@@ -4,14 +4,14 @@ import sys
 import time
 
 DICE_REGEX = r"(?P<qty>\d+)d(?P<faces>\d+)(?P<static>(\+|\-)\d+)?(?P<mod>(t|b)\d+)?"
-ROLL_DELAY_SECONDS = 1.5
+ROLL_DELAY_SECONDS = 1
 
 
 class DiceGroup:
     def __init__(self, dice_string: str):
         self.parse(dice_string)
         self.dropped_dice = []
-        self.results = self.roll()
+        self.roll()
 
     @property
     def total(self):
@@ -53,6 +53,7 @@ def main():
             groups = [DiceGroup(a) for a in args[1:]]
         except ValueError as e:
             print(e)
+        print(f"Total: {sum([r.total for r in groups])}")
         # print(f"{'\n'.join(str(g) for g in groups)}")
     else:
         while True:
